@@ -46,7 +46,7 @@ st.markdown("""<style>.small-font {font-size:12px !important;}</style> """, unsa
 # Screens 
 if symbol: 
     if screen == 'Overview': 
-        left,right = st.beta_columns([1,3])
+        left,right = st.columns([1,3])
 
         with left:
             st.header(f'{symbol.upper()}')
@@ -57,7 +57,7 @@ if symbol:
             st.subheader('Company Description: ')
             summ = ticker.info['longBusinessSummary']
 
-            with st.beta_expander(f'Description: {summ[0:250]} ... Read more'):
+            with st.expander(f'Description: {summ[0:250]} ... Read more'):
                 # st.write(f'{summ}')
 
                 st.markdown(f'<p class="small-font"> {summ} !!</p>', unsafe_allow_html=True)
@@ -81,7 +81,7 @@ if symbol:
         st.header(f'{symbol.upper()} Fundamentals')
         choice = st.sidebar.selectbox('Quarterly or Yearly Financials',['Yearly','Quarterly'])
 
-        left, right = st.beta_columns(2)
+        left, right = st.columns(2)
 
         with left: 
             
